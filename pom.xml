@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sjht.sdk</groupId>
+    <artifactId>huicai-sdk-java</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>HUI-CAI-SDK-JAVA</name>
+    <description>世纪恒通荟采开放平台Java版本SDK</description>
+
+    <developers>
+        <developer>
+            <id>HUI-CAI-SDK</id>
+            <name>ChenBo</name>
+            <email>chenbo@sjht.com</email>
+            <roles>
+                <role>Java Development Architect</role>
+            </roles>
+            <timezone>2024-11-22 22:45:39</timezone>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>huicai-sdk-all</module>
+        <module>huicai-sdk-core</module>
+        <module>huicai-sdk-virtual</module>
+        <module>huicai-sdk-physical</module>
+        <module>huicai-sdk-travel</module>
+        <module>huicai-sdk-onsite</module>
+        <module>huicai-sdk-h5</module>
+    </modules>
+
+    <properties>
+        <!--HUI CAI SDK-->
+        <huicai.sdk.version>1.0.0-SNAPSHOT</huicai.sdk.version>
+        <!--Java SDK-->
+        <java.version>1.8</java.version>
+
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <lombok.version>1.18.22</lombok.version>
+        <fastjson.version>2.0.48</fastjson.version>
+        <hutool-all.version>5.8.26</hutool-all.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sjht.sdk</groupId>
+                <artifactId>huicai-sdk-core</artifactId>
+                <version>${huicai.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sjht.sdk</groupId>
+                <artifactId>huicai-sdk-virtual</artifactId>
+                <version>${huicai.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sjht.sdk</groupId>
+                <artifactId>huicai-sdk-physical</artifactId>
+                <version>${huicai.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sjht.sdk</groupId>
+                <artifactId>huicai-sdk-onsite</artifactId>
+                <version>${huicai.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sjht.sdk</groupId>
+                <artifactId>huicai-sdk-travel</artifactId>
+                <version>${huicai.sdk.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sjht.sdk</groupId>
+                <artifactId>huicai-sdk-h5</artifactId>
+                <version>${huicai.sdk.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>sjht-hc-nexus</id>
+            <name>internal nexus repository</name>
+            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-group/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>aliyun-nexus</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public/</url>
+        </repository>
+    </repositories>
+
+    <!--    <distributionManagement>-->
+    <!--        <repository>-->
+    <!--            <id>sjht-hc-maven-releases</id>-->
+    <!--            <name>Releases</name>-->
+    <!--            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-releases/</url>-->
+    <!--        </repository>-->
+    <!--        <snapshotRepository>-->
+    <!--            <id>sjht-hc-maven-snapshots</id>-->
+    <!--            <name>Snapshot</name>-->
+    <!--            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-snapshots/</url>-->
+    <!--        </snapshotRepository>-->
+    <!--    </distributionManagement>-->
+
+</project>

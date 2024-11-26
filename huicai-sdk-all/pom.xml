@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>huicai-sdk-java</artifactId>
+        <groupId>com.sjht.sdk</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>huicai-sdk-all</artifactId>
+    <name>HUI-CAI-SDK-ALL</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sjht.sdk</groupId>
+            <artifactId>huicai-sdk-virtual</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sjht.sdk</groupId>
+            <artifactId>huicai-sdk-physical</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sjht.sdk</groupId>
+            <artifactId>huicai-sdk-onsite</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sjht.sdk</groupId>
+            <artifactId>huicai-sdk-travel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sjht.sdk</groupId>
+            <artifactId>huicai-sdk-h5</artifactId>
+        </dependency>
+    </dependencies>
+</project>
