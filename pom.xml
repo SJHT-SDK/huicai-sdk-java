@@ -116,32 +116,23 @@
 
     <repositories>
         <repository>
-            <id>sjht-hc-nexus</id>
-            <name>internal nexus repository</name>
-            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-group/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
             <id>aliyun-nexus</id>
             <name>aliyun nexus</name>
             <url>https://maven.aliyun.com/repository/public/</url>
         </repository>
     </repositories>
 
-    <!--    <distributionManagement>-->
-    <!--        <repository>-->
-    <!--            <id>sjht-hc-maven-releases</id>-->
-    <!--            <name>Releases</name>-->
-    <!--            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-releases/</url>-->
-    <!--        </repository>-->
-    <!--        <snapshotRepository>-->
-    <!--            <id>sjht-hc-maven-snapshots</id>-->
-    <!--            <name>Snapshot</name>-->
-    <!--            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-snapshots/</url>-->
-    <!--        </snapshotRepository>-->
-    <!--    </distributionManagement>-->
+    <distributionManagement>
+        <repository>
+            <id>sjht-hc-maven-releases</id>
+            <name>Releases</name>
+            <url>http://106.52.118.113:18082/repository/sjht-sdk-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>sjht-hc-maven-snapshots</id>
+            <name>Snapshot</name>
+            <url>http://106.52.118.113:18082/repository/sjht-sdk-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
