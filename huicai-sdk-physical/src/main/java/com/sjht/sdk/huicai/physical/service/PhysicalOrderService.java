@@ -1,6 +1,5 @@
 package com.sjht.sdk.huicai.physical.service;
 
-import com.alibaba.fastjson.JSONObject;
 import com.sjht.sdk.huicai.core.client.HuicaiApiClient;
 import com.sjht.sdk.huicai.core.enums.ApiUrl;
 import com.sjht.sdk.huicai.core.model.Result;

@@ -1,26 +1,19 @@
 package com.sjht.sdk.huicai.test;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import com.sjht.sdk.huicai.core.client.DefaultApiClient;
 import com.sjht.sdk.huicai.core.client.HuicaiApiClient;
 import com.sjht.sdk.huicai.core.config.HuicaiApiConfig;
 import com.sjht.sdk.huicai.core.model.Result;
-import com.sjht.sdk.huicai.h5.model.H5AuthLoginRequest;
-import com.sjht.sdk.huicai.h5.model.H5AuthLoginResponse;
 import com.sjht.sdk.huicai.h5.model.H5QueryOrderRequest;
 import com.sjht.sdk.huicai.h5.model.H5QueryOrderResponse;
-import com.sjht.sdk.huicai.h5.service.H5AuthService;
 import com.sjht.sdk.huicai.h5.service.H5OrderService;
 import com.sjht.sdk.huicai.virtual.model.VirtualGoodsDetailsResponse;
-import com.sjht.sdk.huicai.virtual.model.VirtualGoodsPageRequest;
-import com.sjht.sdk.huicai.virtual.model.VirtualGoodsPageResponse;
 import com.sjht.sdk.huicai.virtual.service.VirtualGoodsService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 @Slf4j
 @SpringBootTest

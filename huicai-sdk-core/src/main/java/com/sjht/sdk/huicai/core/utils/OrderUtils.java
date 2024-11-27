@@ -1,6 +1,6 @@
 package com.sjht.sdk.huicai.core.utils;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 
 public class OrderUtils {
 

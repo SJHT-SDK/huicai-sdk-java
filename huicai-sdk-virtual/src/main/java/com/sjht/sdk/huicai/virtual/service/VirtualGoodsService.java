@@ -1,9 +1,7 @@
 package com.sjht.sdk.huicai.virtual.service;
 
-import com.alibaba.fastjson.JSONObject;
-import com.sjht.sdk.huicai.core.client.DefaultApiClient;
+import com.alibaba.fastjson2.JSONObject;
 import com.sjht.sdk.huicai.core.client.HuicaiApiClient;
-import com.sjht.sdk.huicai.core.config.HuicaiApiConfig;
 import com.sjht.sdk.huicai.core.enums.ApiUrl;
 import com.sjht.sdk.huicai.core.model.Result;
 import com.sjht.sdk.huicai.core.service.BaseApiService;

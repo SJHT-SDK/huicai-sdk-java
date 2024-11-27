@@ -4,14 +4,16 @@ import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import com.sjht.sdk.huicai.core.config.HuicaiApiConfig;
 import com.sjht.sdk.huicai.core.constant.Constants;
 import com.sjht.sdk.huicai.core.enums.ApiUrl;
 import com.sjht.sdk.huicai.core.model.Result;
 import com.sjht.sdk.huicai.core.utils.SignUtil;
 import com.sjht.sdk.huicai.core.utils.ThreeDesUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +26,7 @@ import java.util.Objects;
  * @author ChenBo
  */
 public abstract class HuicaiApiClient {
+    Logger logger = LoggerFactory.getLogger(HuicaiApiClient.class);
 
     private final HuicaiApiConfig config;
 
@@ -95,7 +98,7 @@ public abstract class HuicaiApiClient {
      * @return 响应数据
      */
     private <E> JSONObject execute(String apiUrl, E input) {
-        StringBuffer log = new StringBuffer("荟采开放平台API请求");
+        StringBuilder logText = new StringBuilder("荟采开放平台API请求");
         try {
             JSONObject data = JSON.parseObject(JSON.toJSONString(input));
             Map<String, String> headersMap = getApiAuthHeader(data);
@@ -116,21 +119,21 @@ public abstract class HuicaiApiClient {
                 route = Constants.HUI_CAI_API_ROUTE;
             }
             String sendApiUrl = serverUrl + route + apiUrl;
-            log.append("\n请求URL：").append(sendApiUrl);
-            log.append("\n请求头Headers：").append(JSON.toJSONString(headersMap));
-            log.append("\n请求体Body明文：").append(data.toJSONString());
-            log.append("\n请求体Body密文：").append(encryptJsonParams.toJSONString());
+            logText.append("\n请求URL：").append(sendApiUrl);
+            logText.append("\n请求头Headers：").append(JSON.toJSONString(headersMap));
+            logText.append("\n请求体Body明文：").append(data.toJSONString());
+            logText.append("\n请求体Body密文：").append(encryptJsonParams.toJSONString());
             long startTime = System.currentTimeMillis();
             HttpResponse response = HttpRequest.post(sendApiUrl)
                     .headerMap(headersMap, false)
                     .body(encryptJsonParams.toJSONString(), "application/json")
                     .execute();
             long endTime = System.currentTimeMillis();
-            log.append("\n请求耗时：").append(endTime - startTime).append("毫秒");
+            logText.append("\n请求耗时：").append(endTime - startTime).append("毫秒");
             if (response == null || response.body() == null || "".equals(response.body())) {
                 throw new RuntimeException("请求异常，发送的请求未返回响应数据");
             }
-            log.append("\n响应Body数据：").append(response.body());
+            logText.append("\n响应Body数据：").append(response.body());
             JSONObject jsonCiphertextResult = JSON.parseObject(response.body());
             if (jsonCiphertextResult.get(Constants.CODE) != null) {
                 JSONObject result = new JSONObject();
@@ -150,11 +153,11 @@ public abstract class HuicaiApiClient {
             if (result.get(Constants.CODE) == null) {
                 throw new RuntimeException("返回状态码异常");
             }
-            log.append("\n响应Body密文解密明文数据：").append(result.toJSONString());
+            logText.append("\n响应Body密文解密明文数据：").append(result.toJSONString());
             return result;
         } finally {
             if (this.config.getLogWitch()) {
-                System.out.println(log);
+                logger.info(logText.toString());
             }
         }
     }
