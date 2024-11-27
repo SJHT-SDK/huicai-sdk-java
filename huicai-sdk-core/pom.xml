@@ -6,7 +6,7 @@
     <parent>
         <artifactId>huicai-sdk-java</artifactId>
         <groupId>com.sjht.sdk</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>${huicai.sdk.version}</version>
     </parent>
 
     <artifactId>huicai-sdk-core</artifactId>
