@@ -6,7 +6,7 @@
     <parent>
         <artifactId>huicai-sdk-java</artifactId>
         <groupId>com.sjht.sdk</groupId>
-        <version>${huicai.sdk.version}</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>huicai-sdk-core</artifactId>
@@ -16,23 +16,19 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>
             <artifactId>fastjson2</artifactId>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>2.0.16</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

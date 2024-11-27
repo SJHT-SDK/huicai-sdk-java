@@ -5,7 +5,7 @@
 
     <groupId>com.sjht.sdk</groupId>
     <artifactId>huicai-sdk-java</artifactId>
-    <version>${huicai.sdk.version}</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>HUI-CAI-SDK-JAVA</name>
     <description>世纪恒通荟采开放平台Java版本SDK</description>
@@ -34,7 +34,7 @@
 
     <properties>
         <!--HUI CAI SDK-->
-        <huicai.sdk.version>1.0.0-SNAPSHOT</huicai.sdk.version>
+        <huicai.sdk.version>1.0.0</huicai.sdk.version>
         <!--Java SDK-->
         <java.version>1.8</java.version>
 
