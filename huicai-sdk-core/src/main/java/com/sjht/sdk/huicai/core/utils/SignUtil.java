@@ -14,7 +14,25 @@ import java.util.*;
  */
 public class SignUtil {
 
-    private SignUtil() {
+    /**
+     * 所有的请求参数都会在这里进行排序加密
+     *
+     * @param params    请求Body参数
+     * @param appId     AppId
+     * @param traceId   32位全局事务ID
+     * @param timestamp 时间戳
+     * @param nonce     10随机字符串
+     * @param appSecret AppSecret
+     * @param sign      签名
+     * @return 验签结果
+     */
+    public static boolean verifySign(JSONObject params, String appId, String traceId, String timestamp, String nonce, String appSecret, String sign) {
+        if (null == sign || sign.isEmpty()) {
+            return false;
+        }
+        // 加密参数，得到sing
+        String paramsSign = getParamsSign(params, appId, traceId, timestamp, nonce, appSecret);
+        return null != paramsSign && !paramsSign.isEmpty() && sign.equals(paramsSign);
     }
 
     /**

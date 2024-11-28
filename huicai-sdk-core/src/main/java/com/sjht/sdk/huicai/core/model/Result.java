@@ -29,4 +29,12 @@ public class Result<T> implements Serializable {
      */
     private Long total;
 
+    public static <T> Result<T> success() {
+        return new Result<>(200, "请求成功", null, null);
+    }
+
+    public static <T> Result<T> error(Integer code, String message) {
+        return new Result<>(code, message, null, null);
+    }
+
 }
