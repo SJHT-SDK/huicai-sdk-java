@@ -29,7 +29,7 @@ public class VirtualOrderCreateRequest implements Serializable {
     /**
      * 充值账号属性。JSON字符串，示例：{"phone":"13800000000","money":"30000"}
      */
-    private RechargeAccount accounts;
+    private String accounts;
     /**
      * 虚拟订单状态回调地址
      */
