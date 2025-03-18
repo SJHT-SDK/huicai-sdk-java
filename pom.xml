@@ -105,12 +105,12 @@
         <repository>
             <id>sjht-hc-maven-releases</id>
             <name>Releases</name>
-            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-releases/</url>
+            <url>http://106.52.118.113:18082/repository/sjht-sdk-releases/</url>
         </repository>
         <snapshotRepository>
             <id>sjht-hc-maven-snapshots</id>
             <name>Snapshot</name>
-            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-snapshots/</url>
+            <url>http://106.52.118.113:18082/repository/sjht-sdk-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -118,7 +118,7 @@
         <repository>
             <id>sjht-hc-nexus</id>
             <name>internal nexus repository</name>
-            <url>http://106.52.118.113:18082/repository/sjht-hc-maven-group/</url>
+            <url>http://106.52.118.113:18082/repository/sjht-sdk-public/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
@@ -128,7 +128,7 @@
         <repository>
             <id>aliyun-nexus</id>
             <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <url>https://maven.aliyun.com/repository/public/</url>
         </repository>
     </repositories>
 
@@ -140,15 +140,6 @@
                 <version>2.7</version>
                 <configuration>
                     <generateBackupPoms>false</generateBackupPoms>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
