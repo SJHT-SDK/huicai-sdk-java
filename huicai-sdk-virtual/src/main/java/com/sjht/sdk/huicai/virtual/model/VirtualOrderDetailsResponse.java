@@ -118,5 +118,26 @@ public class VirtualOrderDetailsResponse implements Serializable {
          * 卡密有效期截止时间
          */
         private String cardDeadline;
+        /**
+         * 核销状态  0-待核销  1-已核销
+         */
+        private Integer verifyStatus = 1;
+        /**
+         * 核销时间，格式：yyyy-MM-dd HH:mm:ss
+         */
+        private String verifyTime;
+        /**
+         * 核销类型     1-券码核销    2-福卡绑定
+         */
+        private Integer verifyType;
+        /**
+         * 商家自发券推送信息
+         */
+        private MerchantCouponPushData merchantCoupon;
+
+        /**
+         * 核销商户名称
+         */
+        private FukaApiCouponPushData fuka;
     }
 }
