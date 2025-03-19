@@ -112,12 +112,12 @@ public abstract class HuicaiApiClient {
             encryptJsonParams.put("ciphertext", requestCiphertext);
             String serverUrl = this.config.getServerUrl().replace(".com/", ".com");
             String route;
-            if (serverUrl.startsWith(Constants.PRO_SERVER_URL)) {
+            if (apiUrl.contains("/open/")) {
+                route = Constants.HUI_CAI_API_ROUTE;
+            } else if (serverUrl.startsWith(Constants.PRO_SERVER_URL)) {
                 route = Constants.PRO_ROUTE;
             } else if (serverUrl.startsWith(Constants.DEV_SERVER_URL)) {
                 route = Constants.DEV_ROUTE;
-            } else if (apiUrl.contains("/open/")) {
-                route = Constants.HUI_CAI_API_ROUTE;
             } else {
                 route = "";
             }
