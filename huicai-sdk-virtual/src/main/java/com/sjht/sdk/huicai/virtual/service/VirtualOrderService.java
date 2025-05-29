@@ -47,7 +47,7 @@ public class VirtualOrderService extends BaseApiService {
      * @param cardNo  券码
      * @return 核销二维码信息
      */
-    public Result<VirtualOrderVerifyQrCodeResponse> getVerifyQrCode(String orderNo, String cardNo) {
+    public Result<VirtualOrderVerifyQrCodeResponse> getVerifyQrCode(String orderNo, String cardNo, Integer expirationTime) {
         if (orderNo == null || orderNo.isEmpty()) {
             throw new RuntimeException("世纪恒通订单号不能为空");
         }
@@ -57,6 +57,9 @@ public class VirtualOrderService extends BaseApiService {
         JSONObject request = new JSONObject();
         request.put("orderNo", orderNo);
         request.put("cardNo", cardNo);
+        if (expirationTime != null && expirationTime > 0) {
+            request.put("expirationTime", expirationTime);
+        }
         return this.baseClient.execute(ApiUrl.VIRTUAL_ORDER_VERIFY_QR_CODE, request, VirtualOrderVerifyQrCodeResponse.class);
     }
 
